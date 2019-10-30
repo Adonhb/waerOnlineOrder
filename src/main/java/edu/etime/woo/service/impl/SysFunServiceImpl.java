@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * TODO
+ * 系统功能管理
  *
  * @author：yjh
  * @date：2019/10/26 9:32
@@ -38,7 +38,7 @@ public class SysFunServiceImpl implements SysFunService {
      */
     @Override
     public int insert(SysFun sysFun) {
-        return 0;
+        return mapper.insert(sysFun);
     }
 
     /**
@@ -55,4 +55,6 @@ public class SysFunServiceImpl implements SysFunService {
     public SysFun selectById(String funid) {
         return null;
     }
+
+
 }

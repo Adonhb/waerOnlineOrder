@@ -66,6 +66,7 @@ public class SysFunController {
     @ResponseBody
     public Integer add(SysFun sysFun){
         sysFun.setFunid(UUID.randomUUID().toString());
+        System.out.println(sysFun.getFunname());
         return service.insert(sysFun);
     }
 }

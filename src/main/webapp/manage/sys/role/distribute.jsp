@@ -63,7 +63,7 @@
 </head>
 <body>
 <ul class="breadcrumb">
-    <li><a href="#">角色管理</a> <span class="divider">/</span></li>
+    <li><a href="${pageContext.request.contextPath}/SysRole/list">角色管理</a> <span class="divider">/</span></li>
     <li class="active">角色权限分配</li>
 </ul>
 
@@ -109,7 +109,7 @@
         </dl>
         <input type="hidden" id="roleid" name="roleid" value="${roleid}" />
         <input class="btn btn-primary" type="submit" value="保存" />
-        <a href="${pageContext.request.contextPath}/SysRole/list"><input type="button" class="btn-success" value="返回"/></a>
+        <a href="${pageContext.request.contextPath}/SysRole/list"><input type="button" class="btn btn-primary" value="返回"/></a>
     </div>
 </form>
 </body>

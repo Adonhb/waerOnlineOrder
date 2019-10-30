@@ -85,17 +85,17 @@ public class SysRoleController {
         SysRole sysRole = new SysRole(roleid,rolename,Integer.valueOf(str_rolestate));
 
         int rst = service.insert(sysRole);
-        System.out.println(rst);
-        return "sys/role/list";
+        System.out.println("增加角色:"+rst);
+        return "redirect:/SysRole/list";
     }
 
     /**
-     *
+     * 初始化修改页面
      * @param roleid
      * @param model
      * @return
      */
-    @RequestMapping("/toedit?roleid")
+    @RequestMapping("/toedit/{roleid}")
     public String toedit(@PathVariable String roleid,Model model){
         SysRole sysRole = service.selectById(roleid);
         model.addAttribute("sysrole",sysRole);
@@ -105,6 +105,7 @@ public class SysRoleController {
     public String edit(HttpServletRequest request,Model model){
         //获取
         String roleid = request.getParameter("roleid");
+        System.out.println(roleid);
         String rolename = request.getParameter("rolename");
         String str_rolestate = request.getParameter("rolestate");
 
@@ -116,9 +117,9 @@ public class SysRoleController {
 
         //
         if (rst > 0){
-            return "sys/role/list";
+            return this.list(model,request);
         }else {
-            return "sys/role/toedit?"+sysRole.getRoleid();
+            return this.toedit(roleid,model);
         }
 
     }

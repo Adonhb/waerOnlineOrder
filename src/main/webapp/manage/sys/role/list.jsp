@@ -25,31 +25,30 @@
     <li><a href="#">角色管理</a> <span class="divider">/</span></li>
     <li class="active">角色列表</li>
 </ul>
-    <form action="${pageContext.request.contextPath}/SysRole/rolelist">
-            <label>角色名：</label>
-            <input type="text" name="rolename" value="${param.rolename}"/>
+    <form action="${pageContext.request.contextPath}/SysRole/list">
+            角色名：<input type="text" name="rolename" value="${param.rolename}"/>
             <input type="submit" value="查找" />
-            <input type="button" value="增加" href="${pageContext.request.contextPath}">
-<%--        <label>角色状态：</label>--%>
-<%--        <select name="rolestate">--%>
-<%--            <c:choose>--%>
-<%--                <c:when test="${param.rolestate==1}">--%>
-<%--                    <option value="1" selected="selected">可用</option>--%>
-<%--                    <option value="0">不可用</option>--%>
-<%--                    <option value="-1">全部</option>--%>
-<%--                </c:when>--%>
-<%--                <c:when test="${param.rolestate==0}">--%>
-<%--                    <option value="1">可用</option>xi--%>
-<%--                    <option value="0" selected="selected">不可用</option>--%>
-<%--                    <option value="-1">全部</option>--%>
-<%--                </c:when>--%>
-<%--                <c:otherwise>--%>
-<%--                    <option value="1">可用</option>--%>
-<%--                    <option value="0">不可用</option>--%>
-<%--                    <option value="-1" selected="selected">全部</option>--%>
-<%--                </c:otherwise>--%>
-<%--            </c:choose>--%>
-<%--        </select>--%>
+        <a href="${pageContext.request.contextPath}/SysRole/toadd"><input type="button" value="增加" ></a>
+        角色状态：
+        <select name="rolestate">
+            <c:choose>
+                <c:when test="${param.rolestate==1}">
+                    <option value="1" selected="selected">可用</option>
+                    <option value="0">不可用</option>
+                    <option value="-1">全部</option>
+                </c:when>
+                <c:when test="${param.rolestate==0}">
+                    <option value="1">可用</option>xi
+                    <option value="0" selected="selected">不可用</option>
+                    <option value="-1">全部</option>
+                </c:when>
+                <c:otherwise>
+                    <option value="1">可用</option>
+                    <option value="0">不可用</option>
+                    <option value="-1" selected="selected">全部</option>
+                </c:otherwise>
+            </c:choose>
+        </select>
     </form>
     <table class="table table-bordered">
         <thead>

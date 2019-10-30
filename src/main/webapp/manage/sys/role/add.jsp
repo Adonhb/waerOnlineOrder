@@ -19,9 +19,16 @@
           href="${pageContext.request.contextPath}/css/font-awesome/css/font-awesome.css">
     <script src="${pageContext.request.contextPath}/css/jquery-1.8.1.min.js"
             type="text/javascript"></script>
+    <script>
+
+    </script>
 </head>
 <body>
-    <br action="${pageContext.request.contextPath}/SysRole/add">
+<ul class="breadcrumb">
+    <li><a href="${pageContext.request.contextPath}/SysRole/list">角色管理</a> <span class="divider">/</span></li>
+    <li class="active">增加角色</li>
+</ul>
+    <form action="${pageContext.request.contextPath}/SysRole/add">
         <label>角色名称：</label><input type="text" name="rolename"/></br>
         <label>角色状态：</label>
         <select name="rolestate">
